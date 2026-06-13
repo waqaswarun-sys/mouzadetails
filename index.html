@@ -7,48 +7,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{font-family:'Inter',sans-serif;background:#f4f6f8;color:#222;min-height:100vh}
 
-/* ── Header ── */
 .site-header{background:#1a3a5c;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c8a84b}
 .site-title{font-size:15px;font-weight:600;letter-spacing:0.3px}
 .site-title-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:17px;direction:rtl;line-height:1.8;color:#c8a84b}
 
-/* ── Tab Nav ── */
 .tab-nav{background:#fff;border-bottom:1px solid #dde3ea;padding:0 24px;display:flex;gap:4px;overflow-x:auto}
-.tab-btn{
-  padding:13px 20px;
-  font-family:'Noto Nastaliq Urdu',serif;
-  font-size:15px;
-  direction:rtl;
-  color:#555;
-  cursor:pointer;
-  border:none;background:none;
-  border-bottom:3px solid transparent;
-  white-space:nowrap;
-  line-height:1.8;
-  transition:all 0.18s;
-}
+.tab-btn{padding:13px 20px;font-family:'Noto Nastaliq Urdu',serif;font-size:15px;direction:rtl;color:#555;cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;white-space:nowrap;line-height:1.8;transition:all 0.18s}
 .tab-btn:hover{color:#1a3a5c;background:#f4f6f8}
 .tab-btn.active{color:#1a3a5c;border-bottom-color:#c8a84b;font-weight:600}
 
-/* ── Container ── */
-.container{max-width:960px;margin:0 auto;padding:28px 20px}
+.container{max-width:980px;margin:0 auto;padding:28px 20px}
 
-/* ── Summary Cards ── */
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+/* Summary Cards */
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
 .scard{background:#fff;border-radius:8px;padding:16px 20px;border:1px solid #dde3ea;border-top:3px solid #1a3a5c;text-align:center}
 .scard.gold{border-top-color:#c8a84b}
 .scard.green{border-top-color:#2e7d32}
-.scard-num{font-size:28px;font-weight:600;color:#1a3a5c}
+.scard.orange{border-top-color:#e65100}
+.scard-num{font-size:26px;font-weight:600;color:#1a3a5c}
 .scard-lbl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:0.8px;margin-top:6px}
 
-/* ── Table ── */
-.table-wrap{background:#fff;border-radius:8px;border:1px solid #dde3ea;overflow:hidden}
+/* View Toggle */
+.view-toggle{display:flex;gap:8px;margin-bottom:18px}
+.vtab{padding:8px 18px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid #dde3ea;background:#fff;color:#555;transition:all 0.15s}
+.vtab.active{background:#1a3a5c;color:#fff;border-color:#1a3a5c}
+.vtab.v-scanning.active{background:#e65100;border-color:#e65100}
+.vtab.v-complete.active{background:#2e7d32;border-color:#2e7d32}
+
+.table-wrap{background:#fff;border-radius:8px;border:1px solid #dde3ea;overflow:hidden;margin-bottom:20px}
 .tbl-header{padding:14px 20px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between}
-.tbl-title{font-size:13px;font-weight:600;color:#1a3a5c;font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:16px;line-height:1.8}
-.search-box{padding:7px 12px;border:1px solid #dde3ea;border-radius:6px;font-size:13px;outline:none;width:200px;font-family:'Inter',sans-serif}
+.tbl-title{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600}
+.tbl-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:10px;margin-left:8px}
+.tbl-badge.scanning{background:#fff3e0;color:#e65100}
+.tbl-badge.complete{background:#e8f5e9;color:#2e7d32}
+.tbl-badge.all{background:#e3f2fd;color:#1565c0}
+
+.search-box{padding:7px 12px;border:1px solid #dde3ea;border-radius:6px;font-size:13px;outline:none;width:200px}
 .search-box:focus{border-color:#1a3a5c}
 
 table{width:100%;border-collapse:collapse}
@@ -71,7 +67,12 @@ tbody tr:hover td{background:#f8fafc}
 .p-mut{background:#f3e5f5;color:#6a1b9a}
 .p-sha{background:#e8f5e9;color:#2e7d32}
 
-/* ── Modal ── */
+/* Section divider */
+.section-divider{padding:10px 16px;background:#f4f6f8;font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #dde3ea}
+.section-divider.scanning{background:#fff8f0;color:#e65100;border-left:3px solid #e65100}
+.section-divider.complete{background:#f0faf0;color:#2e7d32;border-left:3px solid #2e7d32}
+
+/* Modal */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100;align-items:center;justify-content:center}
 .modal-bg.open{display:flex}
 .modal{background:#fff;border-radius:10px;width:90%;max-width:760px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column}
@@ -90,18 +91,15 @@ tbody tr:hover td{background:#f8fafc}
 .modal-table tr:last-child td{border-bottom:none}
 .modal-table tbody tr:hover td{background:#f8fafc}
 
-/* ── Loading / Empty ── */
 .loader{text-align:center;padding:48px;color:#888}
 .spinner{width:32px;height:32px;border:3px solid #e0e6ed;border-top-color:#1a3a5c;border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 14px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .empty{text-align:center;padding:40px;color:#aaa;font-size:13px}
 
-/* ── Footer ── */
 footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;border-top:1px solid #dde3ea;background:#fff}
 
 @media(max-width:600px){
   .summary{grid-template-columns:1fr 1fr}
-  .scard:last-child{display:none}
   th:nth-child(3),td:nth-child(3){display:none}
   .search-box{width:130px}
   .modal-stats{grid-template-columns:1fr 1fr}
@@ -110,32 +108,70 @@ footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;
 </head>
 <body>
 
-<!-- Header -->
 <div class="site-header">
   <div class="site-title">Punjab Land Records — District Multan</div>
   <div class="site-title-ur">ضلع ملتان — ریکارڈ انوینٹری</div>
 </div>
 
-<!-- Tab Nav -->
 <div class="tab-nav" id="tabNav">
   <div class="loader" style="padding:12px 24px"><div class="spinner" style="width:20px;height:20px;margin:0 auto"></div></div>
 </div>
 
-<!-- Main -->
 <div class="container">
+  <!-- Summary Cards -->
   <div class="summary">
-    <div class="scard"><div class="scard-num" id="sMouza">—</div><div class="scard-lbl">Mouzas</div></div>
+    <div class="scard"><div class="scard-num" id="sMouza">—</div><div class="scard-lbl">Total Mouzas</div></div>
     <div class="scard gold"><div class="scard-num" id="sRegs">—</div><div class="scard-lbl">Total Registers</div></div>
-    <div class="scard green"><div class="scard-num" id="sComplete">—</div><div class="scard-lbl">Complete</div></div>
+    <div class="scard orange"><div class="scard-num" id="sScanning">—</div><div class="scard-lbl">In Scanning</div></div>
+    <div class="scard green"><div class="scard-num" id="sComplete">—</div><div class="scard-lbl">Completed</div></div>
   </div>
 
-  <div class="table-wrap">
-    <div class="tbl-header">
-      <div class="tbl-title" id="tblTitle">تحصیل منتخب کریں</div>
-      <input class="search-box" id="searchBox" type="text" placeholder="Mouza search..." oninput="filterTable()">
+  <!-- View Toggle -->
+  <div class="view-toggle">
+    <button class="vtab active" id="vtAll" onclick="setView('all')">📋 All Mouzas</button>
+    <button class="vtab v-scanning" id="vtScanning" onclick="setView('scanning')">🔄 In Scanning</button>
+    <button class="vtab v-complete" id="vtComplete" onclick="setView('complete')">✅ Completed</button>
+  </div>
+
+  <!-- All View -->
+  <div id="viewAll">
+    <div class="table-wrap">
+      <div class="tbl-header">
+        <div>
+          <span class="tbl-title" id="tblTitle">تحصیل منتخب کریں</span>
+          <span class="tbl-badge all" id="allCount"></span>
+        </div>
+        <input class="search-box" id="searchBox" type="text" placeholder="Mouza search..." oninput="filterTable()">
+      </div>
+      <div id="tableArea"><div class="empty">اوپر سے تحصیل منتخب کریں</div></div>
     </div>
-    <div id="tableArea">
-      <div class="empty">اوپر سے تحصیل منتخب کریں</div>
+  </div>
+
+  <!-- Scanning View -->
+  <div id="viewScanning" style="display:none">
+    <div class="table-wrap">
+      <div class="tbl-header">
+        <div>
+          <span class="tbl-title" style="color:#e65100">زیر اسکیننگ موضعات</span>
+          <span class="tbl-badge scanning" id="scanCount"></span>
+        </div>
+        <input class="search-box" id="searchBoxScan" type="text" placeholder="Mouza search..." oninput="filterScan()">
+      </div>
+      <div id="scanArea"><div class="empty">کوئی ڈیٹا نہیں</div></div>
+    </div>
+  </div>
+
+  <!-- Complete View -->
+  <div id="viewComplete" style="display:none">
+    <div class="table-wrap">
+      <div class="tbl-header">
+        <div>
+          <span class="tbl-title" style="color:#2e7d32">مکمل موضعات</span>
+          <span class="tbl-badge complete" id="compCount"></span>
+        </div>
+        <input class="search-box" id="searchBoxComp" type="text" placeholder="Mouza search..." oninput="filterComp()">
+      </div>
+      <div id="compArea"><div class="empty">کوئی ڈیٹا نہیں</div></div>
     </div>
   </div>
 </div>
@@ -162,14 +198,21 @@ footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;
 <footer>Punjab Land Records Authority &nbsp;·&nbsp; Board of Revenue, Government of Punjab</footer>
 
 <script>
-// ══ CONFIG — Replace with your Apps Script Web App URL ══
 const API = 'https://script.google.com/macros/s/AKfycbwkf4CKIBKJ7fq8lzCt27I1EYe7z0QeB-gNL6GaLgFO2tJISpq2DZHtFUHU-5eZi0FsGg/exec';
 
-let currentRows = [];
-let allRows = [];
-let currentTab = '';
+// ── State (tab-local, cleared on each tab switch) ──
+let state = {
+  headers: [],
+  groups: {},
+  idx: {},
+  allRows: [],
+  currentRows: [],    // all mouzas
+  scanningRows: [],   // pending/scanning
+  completeRows: []    // complete
+};
 
-// ── Init: Load tabs ──
+let currentView = 'all';
+
 async function init() {
   try {
     const data = await apiFetch('');
@@ -178,48 +221,51 @@ async function init() {
     loadTab(data.tabs[0]);
   } catch(e) {
     document.getElementById('tabNav').innerHTML =
-      '<span style="padding:14px 20px;color:#c00;font-size:12px">⚠ Apps Script URL set karein (index.html line 1)</span>';
+      '<span style="padding:14px 20px;color:#c00;font-size:12px">⚠ Apps Script URL set karein</span>';
   }
 }
 
-// ── Render Tab Buttons ──
 function renderTabs(tabs) {
-  document.getElementById('tabNav').innerHTML = tabs.map(t => `
-    <button class="tab-btn" id="tab-${esc(t)}" onclick="loadTab('${esc(t)}')">${t}</button>
-  `).join('');
+  document.getElementById('tabNav').innerHTML = tabs.map(t =>
+    `<button class="tab-btn" id="tab-${esc(t)}" onclick="loadTab('${esc(t)}')">${t}</button>`
+  ).join('');
 }
 
-// ── Load Tab Data ──
 async function loadTab(tabName) {
-  currentTab = tabName;
+  // Reset state completely for new tab
+  state = { headers:[], groups:{}, idx:{}, allRows:[], currentRows:[], scanningRows:[], completeRows:[] };
+
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const btn = document.getElementById('tab-' + esc(tabName));
   if (btn) btn.classList.add('active');
 
   document.getElementById('tblTitle').textContent = tabName;
   document.getElementById('tableArea').innerHTML = '<div class="loader"><div class="spinner"></div>لوڈ ہو رہا ہے...</div>';
-  document.getElementById('searchBox').value = '';
+  document.getElementById('scanArea').innerHTML  = '<div class="loader"><div class="spinner"></div></div>';
+  document.getElementById('compArea').innerHTML  = '<div class="loader"><div class="spinner"></div></div>';
+  document.getElementById('searchBox').value     = '';
+  document.getElementById('searchBoxScan').value = '';
+  document.getElementById('searchBoxComp').value = '';
 
   try {
     const data = await apiFetch(tabName);
-    allRows = data.rows || [];
-    buildTable(allRows, data.headers || []);
-    updateStats(allRows);
+    state.allRows  = data.rows    || [];
+    state.headers  = data.headers || [];
+    buildTable(state.allRows, state.headers);
+    updateStats();
   } catch(e) {
     document.getElementById('tableArea').innerHTML = '<div class="empty">ڈیٹا لوڈ نہیں ہوا</div>';
   }
 }
 
-// ── Build Mouza Summary Table ──
 function buildTable(rows, headers) {
-  // Find column indices
   const h = headers.map(x => x.toLowerCase());
-  const mIdx = h.findIndex(x => x.includes('mouza'));
-  const yIdx = h.findIndex(x => x.includes('year'));
-  const rIdx = h.findIndex(x => x === 'rhz');
-  const mIdx2= h.findIndex(x => x.includes('mutation'));
-  const sIdx = h.findIndex(x => x.includes('shajra'));
-  const stIdx= h.findIndex(x => x.includes('status'));
+  const mIdx  = h.findIndex(x => x.includes('mouza'));
+  const yIdx  = h.findIndex(x => x.includes('year'));
+  const rIdx  = h.findIndex(x => x === 'rhz');
+  const mIdx2 = h.findIndex(x => x.includes('mutation'));
+  const sIdx  = h.findIndex(x => x.includes('shajra'));
+  const stIdx = h.findIndex(x => x.includes('status'));
 
   if (mIdx < 0) {
     document.getElementById('tableArea').innerHTML = '<div class="empty">Mouza column نہیں ملا</div>';
@@ -235,12 +281,10 @@ function buildTable(rows, headers) {
     groups[m].push(r);
   });
 
-  // Store for modal
-  window._headers = headers;
-  window._groups = groups;
-  window._idx = { mIdx, yIdx, rIdx, mIdx2, sIdx, stIdx };
+  state.groups = groups;
+  state.idx    = { mIdx, yIdx, rIdx, mIdx2, sIdx, stIdx };
 
-  currentRows = Object.entries(groups).map(([mouza, rs]) => {
+  const allMouzas = Object.entries(groups).map(([mouza, rs]) => {
     const totalReg = rs.length;
     const totalRhz = rs.reduce((s,r) => s + (parseInt(r[headers[rIdx]]) || 0), 0);
     const totalMut = rs.reduce((s,r) => s + (parseInt(r[headers[mIdx2]]) || 0), 0);
@@ -249,72 +293,90 @@ function buildTable(rows, headers) {
     return { mouza, totalReg, totalRhz, totalMut, totalSha, complete, rs };
   });
 
-  renderTable(currentRows);
+  state.currentRows  = allMouzas;
+  state.scanningRows = allMouzas.filter(d => !d.complete);
+  state.completeRows = allMouzas.filter(d =>  d.complete);
+
+  renderTable(state.currentRows,  'tableArea');
+  renderTable(state.scanningRows, 'scanArea');
+  renderTable(state.completeRows, 'compArea');
 }
 
-function renderTable(data) {
+function renderTable(data, areaId) {
   if (!data.length) {
-    document.getElementById('tableArea').innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
+    document.getElementById(areaId).innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
     return;
   }
   let html = `<table><thead><tr>
-    <th>#</th>
-    <th>Mouza Name</th>
-    <th>Registers</th>
-    <th>Types</th>
-    <th>Status</th>
+    <th>#</th><th style="text-align:right">Mouza Name</th><th>Registers</th><th>Types</th><th>Status</th>
   </tr></thead><tbody>`;
 
   data.forEach((d, i) => {
     html += `<tr onclick="openModal('${esc(d.mouza)}')">
       <td style="color:#aaa;font-size:12px">${i+1}</td>
-      <td>
-        <div class="mouza-name-ur">${d.mouza}</div>
-        <div class="mouza-name-en">${d.mouza}</div>
-      </td>
+      <td style="text-align:right;direction:rtl"><div class="mouza-name-ur">${d.mouza}</div></td>
       <td style="font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
       <td>
         ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
         ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
         ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
       </td>
-      <td><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Pending'}</span></td>
+      <td><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span></td>
     </tr>`;
   });
   html += '</tbody></table>';
-  document.getElementById('tableArea').innerHTML = html;
+  document.getElementById(areaId).innerHTML = html;
 }
 
-// ── Stats ──
-function updateStats(rows) {
-  const h = window._headers || [];
-  const idx = window._idx || {};
-  const stIdx = idx.stIdx;
-  const mIdx  = idx.mIdx;
+function updateStats() {
+  const total    = state.currentRows.length;
+  const scanning = state.scanningRows.length;
+  const complete = state.completeRows.length;
+  const regs     = state.allRows.length;
 
-  const groups = window._groups || {};
-  const names  = Object.keys(groups);
-  const complete = names.filter(m =>
-    groups[m].every(r => (r[h[stIdx]] || '').toLowerCase().trim() === 'complete')
-  ).length;
+  document.getElementById('sMouza').textContent    = total;
+  document.getElementById('sRegs').textContent     = regs;
+  document.getElementById('sScanning').textContent = scanning;
+  document.getElementById('sComplete').textContent = complete;
 
-  document.getElementById('sMouza').textContent    = names.length;
-  document.getElementById('sRegs').textContent     = rows.length;
-  document.getElementById('sComplete').textContent = complete + ' / ' + names.length;
+  document.getElementById('allCount').textContent  = total + ' mouzas';
+  document.getElementById('scanCount').textContent = scanning + ' mouzas';
+  document.getElementById('compCount').textContent = complete + ' mouzas';
+}
+
+// ── View Toggle ──
+function setView(v) {
+  currentView = v;
+  document.getElementById('viewAll').style.display      = v === 'all'      ? '' : 'none';
+  document.getElementById('viewScanning').style.display = v === 'scanning' ? '' : 'none';
+  document.getElementById('viewComplete').style.display = v === 'complete' ? '' : 'none';
+  document.getElementById('vtAll').classList.toggle('active',      v === 'all');
+  document.getElementById('vtScanning').classList.toggle('active', v === 'scanning');
+  document.getElementById('vtComplete').classList.toggle('active', v === 'complete');
 }
 
 // ── Search ──
 function filterTable() {
   const q = document.getElementById('searchBox').value.toLowerCase().trim();
-  const filtered = q ? currentRows.filter(d => d.mouza.toLowerCase().includes(q)) : currentRows;
-  renderTable(filtered);
+  const filtered = q ? state.currentRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.currentRows;
+  renderTable(filtered, 'tableArea');
+}
+function filterScan() {
+  const q = document.getElementById('searchBoxScan').value.toLowerCase().trim();
+  const filtered = q ? state.scanningRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.scanningRows;
+  renderTable(filtered, 'scanArea');
+}
+function filterComp() {
+  const q = document.getElementById('searchBoxComp').value.toLowerCase().trim();
+  const filtered = q ? state.completeRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.completeRows;
+  renderTable(filtered, 'compArea');
 }
 
 // ── Modal ──
 function openModal(mouza) {
-  const groups  = window._groups  || {};
-  const headers = window._headers || [];
-  const idx     = window._idx     || {};
+  const groups  = state.groups;
+  const headers = state.headers;
+  const idx     = state.idx;
   const rs = groups[mouza] || [];
   const h  = headers;
 
@@ -330,6 +392,7 @@ function openModal(mouza) {
     <div class="mstat"><div class="mstat-num" style="color:#6a1b9a">${totalMut}</div><div class="mstat-lbl">Mutation</div></div>
     <div class="mstat"><div class="mstat-num" style="color:#2e7d32">${totalSha}</div><div class="mstat-lbl">Shajra</div></div>`;
 
+  const opIdx = h.findIndex(x => x.toLowerCase().includes('operator'));
   document.getElementById('modalBody').innerHTML = rs.map((r, i) => `
     <tr>
       <td style="color:#aaa;font-size:12px">${i+1}</td>
@@ -338,7 +401,7 @@ function openModal(mouza) {
       <td>${r[h[idx.mIdx2]] > 0 ? `<span class="pill p-mut">${r[h[idx.mIdx2]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
       <td>${r[h[idx.sIdx]] > 0 ? `<span class="pill p-sha">${r[h[idx.sIdx]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
       <td><span class="badge ${(r[h[idx.stIdx]]||'').toLowerCase()==='complete'?'b-complete':'b-pending'}">${r[h[idx.stIdx]]||'—'}</span></td>
-      <td><span style="font-size:12px;color:#555">${r[h.findIndex(x=>x.toLowerCase().includes('operator'))]||'—'}</span></td>
+      <td><span style="font-size:12px;color:#555">${r[h[opIdx]]||'—'}</span></td>
     </tr>`).join('');
 
   document.getElementById('modalBg').classList.add('open');
@@ -351,7 +414,6 @@ function closeModal(e) {
   document.body.style.overflow = '';
 }
 
-// ── API Helper ──
 async function apiFetch(tab) {
   const url = API + (tab ? '?sheet=' + encodeURIComponent(tab) : '');
   const res = await fetch(url);
