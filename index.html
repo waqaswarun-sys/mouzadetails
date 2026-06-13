@@ -55,7 +55,7 @@ tr:last-child td{border-bottom:none}
 tbody tr{cursor:pointer;transition:background 0.12s}
 tbody tr:hover td{background:#f8fafc}
 
-.mouza-name-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600}
+.mouza-name-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600;white-space:nowrap}
 .mouza-name-en{font-size:12px;color:#888;margin-top:1px}
 
 .badge{display:inline-block;padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600}
@@ -307,21 +307,25 @@ function renderTable(data, areaId) {
     document.getElementById(areaId).innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
     return;
   }
-  let html = `<table><thead><tr>
-    <th>#</th><th style="text-align:right">Mouza Name</th><th>Registers</th><th>Types</th><th>Status</th>
+  let html = `<table dir="rtl"><thead><tr>
+    <th style="text-align:right">Status</th>
+    <th style="text-align:right">Types</th>
+    <th style="text-align:right">Registers</th>
+    <th style="text-align:right">Mouza Name</th>
+    <th style="text-align:left">#</th>
   </tr></thead><tbody>`;
 
   data.forEach((d, i) => {
     html += `<tr onclick="openModal('${esc(d.mouza)}')">
-      <td style="color:#aaa;font-size:12px">${i+1}</td>
-      <td style="text-align:right;direction:rtl"><div class="mouza-name-ur">${d.mouza}</div></td>
-      <td style="font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
+      <td><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span></td>
       <td>
         ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
         ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
         ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
       </td>
-      <td><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span></td>
+      <td style="font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
+      <td style="min-width:180px"><div class="mouza-name-ur">${d.mouza}</div></td>
+      <td style="color:#aaa;font-size:12px;text-align:left">${i+1}</td>
     </tr>`;
   });
   html += '</tbody></table>';
