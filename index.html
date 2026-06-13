@@ -47,9 +47,9 @@ body{font-family:'Inter',sans-serif;background:#f4f6f8;color:#222;min-height:100
 .search-box{padding:7px 12px;border:1px solid #dde3ea;border-radius:6px;font-size:13px;outline:none;width:200px}
 .search-box:focus{border-color:#1a3a5c}
 
-table{width:100%;border-collapse:collapse}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
 thead tr{background:#f4f6f8}
-th{padding:11px 16px;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.6px;text-align:left;border-bottom:1px solid #dde3ea}
+th{padding:11px 16px;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.6px;border-bottom:1px solid #dde3ea}
 td{padding:12px 16px;font-size:13px;border-bottom:1px solid #f0f2f5;vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tbody tr{cursor:pointer;transition:background 0.12s}
@@ -307,25 +307,35 @@ function renderTable(data, areaId) {
     document.getElementById(areaId).innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
     return;
   }
-  let html = `<table dir="rtl"><thead><tr>
-    <th style="text-align:right">Status</th>
-    <th style="text-align:right">Types</th>
-    <th style="text-align:right">Registers</th>
-    <th style="text-align:right">Mouza Name</th>
-    <th style="text-align:left">#</th>
-  </tr></thead><tbody>`;
+  let html = `<table style="direction:rtl;table-layout:fixed;width:100%">
+    <colgroup>
+      <col style="width:110px">
+      <col style="width:200px">
+      <col style="width:80px">
+      <col style="width:auto">
+      <col style="width:40px">
+    </colgroup>
+    <thead><tr>
+      <th style="text-align:right">Status</th>
+      <th style="text-align:right">Types</th>
+      <th style="text-align:right">Registers</th>
+      <th style="text-align:right">Mouza Name</th>
+      <th style="text-align:center;direction:ltr">#</th>
+    </tr></thead><tbody>`;
 
   data.forEach((d, i) => {
     html += `<tr onclick="openModal('${esc(d.mouza)}')">
-      <td><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span></td>
-      <td>
+      <td style="text-align:right"><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span></td>
+      <td style="text-align:right;white-space:nowrap">
         ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
         ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
         ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
       </td>
-      <td style="font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
-      <td style="min-width:180px"><div class="mouza-name-ur">${d.mouza}</div></td>
-      <td style="color:#aaa;font-size:12px;text-align:left">${i+1}</td>
+      <td style="text-align:right;font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
+      <td style="text-align:right;overflow:hidden;text-overflow:ellipsis">
+        <div class="mouza-name-ur" style="white-space:nowrap">${d.mouza}</div>
+      </td>
+      <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
     </tr>`;
   });
   html += '</tbody></table>';
