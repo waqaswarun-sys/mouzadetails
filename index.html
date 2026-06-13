@@ -37,9 +37,9 @@ body{font-family:'Inter',sans-serif;background:#f4f6f8;color:#222;min-height:100
 .vtab.v-complete.active{background:#2e7d32;border-color:#2e7d32}
 
 .table-wrap{background:#fff;border-radius:8px;border:1px solid #dde3ea;overflow:hidden;margin-bottom:20px}
-.tbl-header{padding:14px 20px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between}
+.tbl-header{padding:14px 20px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between;direction:rtl}
 .tbl-title{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600}
-.tbl-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:10px;margin-left:8px}
+.tbl-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:10px;margin-right:8px;direction:ltr;display:inline-block}
 .tbl-badge.scanning{background:#fff3e0;color:#e65100}
 .tbl-badge.complete{background:#e8f5e9;color:#2e7d32}
 .tbl-badge.all{background:#e3f2fd;color:#1565c0}
@@ -310,30 +310,32 @@ function renderTable(data, areaId) {
   let html = `<table style="direction:rtl;table-layout:fixed;width:100%">
     <colgroup>
       <col style="width:110px">
-      <col style="width:200px">
+      <col style="width:210px">
       <col style="width:80px">
       <col style="width:auto">
-      <col style="width:40px">
+      <col style="width:44px">
     </colgroup>
     <thead><tr>
-      <th style="text-align:right">Status</th>
-      <th style="text-align:right">Types</th>
-      <th style="text-align:right">Registers</th>
-      <th style="text-align:right">Mouza Name</th>
+      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">حیثیت</th>
+      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">اقسام</th>
+      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">رجسٹر</th>
+      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">موضع نام</th>
       <th style="text-align:center;direction:ltr">#</th>
     </tr></thead><tbody>`;
 
   data.forEach((d, i) => {
     html += `<tr onclick="openModal('${esc(d.mouza)}')">
-      <td style="text-align:right"><span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span></td>
-      <td style="text-align:right;white-space:nowrap">
+      <td style="text-align:right">
+        <span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span>
+      </td>
+      <td style="white-space:nowrap;text-align:right">
         ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
         ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
         ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
       </td>
       <td style="text-align:right;font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
-      <td style="text-align:right;overflow:hidden;text-overflow:ellipsis">
-        <div class="mouza-name-ur" style="white-space:nowrap">${d.mouza}</div>
+      <td style="text-align:right">
+        <div class="mouza-name-ur" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${d.mouza}</div>
       </td>
       <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
     </tr>`;
