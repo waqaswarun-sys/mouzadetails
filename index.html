@@ -10,7 +10,7 @@
 body{font-family:'Inter',sans-serif;background:#f4f6f8;color:#222;min-height:100vh}
 
 .site-header{background:#1a3a5c;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c8a84b}
-.site-title{font-size:15px;font-weight:600;letter-spacing:0.3px}
+.site-title{font-size:15px;font-weight:600}
 .site-title-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:17px;direction:rtl;line-height:1.8;color:#c8a84b}
 
 .tab-nav{background:#fff;border-bottom:1px solid #dde3ea;padding:0 24px;display:flex;gap:4px;overflow-x:auto}
@@ -18,45 +18,44 @@ body{font-family:'Inter',sans-serif;background:#f4f6f8;color:#222;min-height:100
 .tab-btn:hover{color:#1a3a5c;background:#f4f6f8}
 .tab-btn.active{color:#1a3a5c;border-bottom-color:#c8a84b;font-weight:600}
 
-.container{max-width:980px;margin:0 auto;padding:28px 20px}
+.container{max-width:1020px;margin:0 auto;padding:24px 20px}
 
-/* Summary Cards */
-.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
 .scard{background:#fff;border-radius:8px;padding:16px 20px;border:1px solid #dde3ea;border-top:3px solid #1a3a5c;text-align:center}
 .scard.gold{border-top-color:#c8a84b}
 .scard.green{border-top-color:#2e7d32}
 .scard.orange{border-top-color:#e65100}
 .scard-num{font-size:26px;font-weight:600;color:#1a3a5c}
-.scard-lbl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:0.8px;margin-top:6px}
+.scard-lbl{font-family:'Noto Nastaliq Urdu',serif;font-size:13px;color:#888;margin-top:6px;direction:rtl;line-height:1.8}
 
-/* View Toggle */
-.view-toggle{display:flex;gap:8px;margin-bottom:18px}
-.vtab{padding:8px 18px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid #dde3ea;background:#fff;color:#555;transition:all 0.15s}
+.view-toggle{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.vtab{padding:8px 18px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid #dde3ea;background:#fff;color:#555;transition:all 0.15s;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8}
 .vtab.active{background:#1a3a5c;color:#fff;border-color:#1a3a5c}
 .vtab.v-scanning.active{background:#e65100;border-color:#e65100}
 .vtab.v-complete.active{background:#2e7d32;border-color:#2e7d32}
+.vtab.v-skipped.active{background:#6a1b9a;border-color:#6a1b9a}
 
 .table-wrap{background:#fff;border-radius:8px;border:1px solid #dde3ea;overflow:hidden;margin-bottom:20px}
-.tbl-header{padding:14px 20px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between;direction:rtl}
+.tbl-header{padding:14px 20px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between;direction:rtl;gap:10px}
 .tbl-title{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600}
 .tbl-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:10px;margin-right:8px;direction:ltr;display:inline-block}
 .tbl-badge.scanning{background:#fff3e0;color:#e65100}
 .tbl-badge.complete{background:#e8f5e9;color:#2e7d32}
 .tbl-badge.all{background:#e3f2fd;color:#1565c0}
+.tbl-badge.skipped{background:#f3e5f5;color:#6a1b9a}
 
-.search-box{padding:7px 12px;border:1px solid #dde3ea;border-radius:6px;font-size:13px;outline:none;width:200px}
+.search-box{padding:7px 12px;border:1px solid #dde3ea;border-radius:6px;font-size:13px;outline:none;width:180px;direction:ltr}
 .search-box:focus{border-color:#1a3a5c}
 
 table{width:100%;border-collapse:collapse;table-layout:fixed}
 thead tr{background:#f4f6f8}
-th{padding:11px 16px;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.6px;border-bottom:1px solid #dde3ea}
-td{padding:12px 16px;font-size:13px;border-bottom:1px solid #f0f2f5;vertical-align:middle}
+th{padding:11px 16px;font-size:11px;font-weight:600;color:#888;letter-spacing:0.4px;border-bottom:1px solid #dde3ea;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8}
+td{padding:11px 16px;font-size:13px;border-bottom:1px solid #f0f2f5;vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tbody tr{cursor:pointer;transition:background 0.12s}
 tbody tr:hover td{background:#f8fafc}
 
-.mouza-name-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600;white-space:nowrap}
-.mouza-name-en{font-size:12px;color:#888;margin-top:1px}
+.mouza-name-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:15px;direction:rtl;line-height:1.8;color:#1a3a5c;font-weight:600;white-space:nowrap}
 
 .badge{display:inline-block;padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600}
 .b-complete{background:#e8f5e9;color:#2e7d32}
@@ -66,43 +65,67 @@ tbody tr:hover td{background:#f8fafc}
 .p-rhz{background:#e3f2fd;color:#1565c0}
 .p-mut{background:#f3e5f5;color:#6a1b9a}
 .p-sha{background:#e8f5e9;color:#2e7d32}
+.p-skip{background:#fce4ec;color:#c62828}
 
-/* Section divider */
-.section-divider{padding:10px 16px;background:#f4f6f8;font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #dde3ea}
-.section-divider.scanning{background:#fff8f0;color:#e65100;border-left:3px solid #e65100}
-.section-divider.complete{background:#f0faf0;color:#2e7d32;border-left:3px solid #2e7d32}
+/* Skipped Years Panel */
+.skip-panel{background:#fff;border-radius:8px;border:1px solid #dde3ea;overflow:hidden;margin-bottom:16px}
+.skip-panel-head{background:#6a1b9a;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px;direction:rtl;justify-content:space-between}
+.skip-panel-title{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;line-height:1.8}
+.skip-controls{background:#f9f0ff;padding:16px 20px;border-bottom:1px solid #e8d5f5;direction:rtl;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.skip-controls label{font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8;color:#555}
+.skip-controls input[type=number]{padding:6px 10px;border:1px solid #dde3ea;border-radius:6px;font-size:13px;width:90px;outline:none;direction:ltr}
+.skip-controls input:focus{border-color:#6a1b9a}
+.skip-btn{padding:7px 18px;background:#6a1b9a;color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8}
+.skip-btn:hover{background:#4a148c}
+
+.skip-mouza-row td{cursor:default!important}
+.skip-mouza-row:hover td{background:inherit!important}
+.skip-years-cell{display:flex;flex-wrap:wrap;gap:4px;direction:rtl;justify-content:flex-end}
+
+/* Print / Download buttons */
+.action-bar{display:flex;gap:8px;direction:rtl;margin-bottom:14px;flex-wrap:wrap}
+.act-btn{padding:7px 16px;border-radius:6px;font-size:13px;cursor:pointer;border:1px solid #dde3ea;background:#fff;display:flex;align-items:center;gap:6px;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8}
+.act-btn:hover{background:#f4f6f8}
+.act-btn.primary{background:#1a3a5c;color:#fff;border-color:#1a3a5c}
+.act-btn.primary:hover{background:#142d47}
 
 /* Modal */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100;align-items:center;justify-content:center}
 .modal-bg.open{display:flex}
-.modal{background:#fff;border-radius:10px;width:90%;max-width:760px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column}
-.modal-head{padding:18px 22px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between;background:#1a3a5c;color:#fff}
+.modal{background:#fff;border-radius:10px;width:90%;max-width:700px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column}
+.modal-head{padding:16px 22px;border-bottom:1px solid #dde3ea;display:flex;align-items:center;justify-content:space-between;background:#1a3a5c;color:#fff}
 .modal-title-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:20px;direction:rtl;line-height:1.8}
-.close-btn{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:4px}
+.close-btn{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;border-radius:4px}
 .close-btn:hover{background:rgba(255,255,255,0.15)}
-.modal-body{overflow-y:auto;padding:0}
+.modal-body{overflow-y:auto}
 .modal-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#dde3ea;border-bottom:1px solid #dde3ea}
 .mstat{background:#fff;padding:14px 16px;text-align:center}
 .mstat-num{font-size:22px;font-weight:600;color:#1a3a5c}
-.mstat-lbl{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.6px;margin-top:4px}
-.modal-table{width:100%;border-collapse:collapse}
-.modal-table th{padding:10px 16px;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.5px;text-align:left;background:#f4f6f8;border-bottom:1px solid #dde3ea;position:sticky;top:0}
-.modal-table td{padding:10px 16px;font-size:13px;border-bottom:1px solid #f0f2f5}
+.mstat-lbl{font-family:'Noto Nastaliq Urdu',serif;font-size:12px;color:#888;margin-top:4px;line-height:1.8}
+.modal-table{width:100%;border-collapse:collapse;direction:rtl}
+.modal-table th{padding:10px 14px;font-size:13px;font-family:'Noto Nastaliq Urdu',serif;line-height:1.8;color:#888;text-align:right;background:#f4f6f8;border-bottom:1px solid #dde3ea;position:sticky;top:0}
+.modal-table td{padding:10px 14px;font-size:13px;border-bottom:1px solid #f0f2f5;text-align:right}
 .modal-table tr:last-child td{border-bottom:none}
-.modal-table tbody tr:hover td{background:#f8fafc}
 
 .loader{text-align:center;padding:48px;color:#888}
 .spinner{width:32px;height:32px;border:3px solid #e0e6ed;border-top-color:#1a3a5c;border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 14px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.empty{text-align:center;padding:40px;color:#aaa;font-size:13px}
+.empty{text-align:center;padding:40px;color:#aaa;font-size:13px;font-family:'Noto Nastaliq Urdu',serif;line-height:1.8}
 
 footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;border-top:1px solid #dde3ea;background:#fff}
 
 @media(max-width:600px){
   .summary{grid-template-columns:1fr 1fr}
-  th:nth-child(3),td:nth-child(3){display:none}
-  .search-box{width:130px}
+  .search-box{width:120px}
   .modal-stats{grid-template-columns:1fr 1fr}
+}
+
+/* Print styles */
+@media print{
+  .site-header,.tab-nav,.view-toggle,.action-bar,.skip-controls,.tbl-header .search-box,footer{display:none!important}
+  .table-wrap{border:none;box-shadow:none}
+  body{background:#fff}
+  .container{padding:0}
 }
 </style>
 </head>
@@ -120,58 +143,95 @@ footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;
 <div class="container">
   <!-- Summary Cards -->
   <div class="summary">
-    <div class="scard"><div class="scard-num" id="sMouza">—</div><div class="scard-lbl">Total Mouzas</div></div>
-    <div class="scard gold"><div class="scard-num" id="sRegs">—</div><div class="scard-lbl">Total Registers</div></div>
-    <div class="scard orange"><div class="scard-num" id="sScanning">—</div><div class="scard-lbl">In Scanning</div></div>
-    <div class="scard green"><div class="scard-num" id="sComplete">—</div><div class="scard-lbl">Completed</div></div>
+    <div class="scard"><div class="scard-num" id="sMouza">—</div><div class="scard-lbl">کل موضعات</div></div>
+    <div class="scard gold"><div class="scard-num" id="sRegs">—</div><div class="scard-lbl">کل رجسٹر</div></div>
+    <div class="scard orange"><div class="scard-num" id="sScanning">—</div><div class="scard-lbl">زیر اسکیننگ</div></div>
+    <div class="scard green"><div class="scard-num" id="sComplete">—</div><div class="scard-lbl">مکمل</div></div>
   </div>
 
   <!-- View Toggle -->
   <div class="view-toggle">
-    <button class="vtab active" id="vtAll" onclick="setView('all')">📋 All Mouzas</button>
-    <button class="vtab v-scanning" id="vtScanning" onclick="setView('scanning')">🔄 In Scanning</button>
-    <button class="vtab v-complete" id="vtComplete" onclick="setView('complete')">✅ Completed</button>
+    <button class="vtab active" id="vtAll" onclick="setView('all')">📋 تمام موضعات</button>
+    <button class="vtab v-scanning" id="vtScanning" onclick="setView('scanning')">🔄 زیر اسکیننگ</button>
+    <button class="vtab v-complete" id="vtComplete" onclick="setView('complete')">✅ مکمل</button>
+    <button class="vtab v-skipped" id="vtSkipped" onclick="setView('skipped')">⚠️ چھوٹے سال</button>
   </div>
 
-  <!-- All View -->
+  <!-- ALL VIEW -->
   <div id="viewAll">
+    <div class="action-bar">
+      <button class="act-btn primary" onclick="printView('all')">🖨️ پرنٹ</button>
+      <button class="act-btn" onclick="downloadCSV('all')">⬇️ ڈاؤنلوڈ CSV</button>
+    </div>
     <div class="table-wrap">
       <div class="tbl-header">
         <div>
           <span class="tbl-title" id="tblTitle">تحصیل منتخب کریں</span>
           <span class="tbl-badge all" id="allCount"></span>
         </div>
-        <input class="search-box" id="searchBox" type="text" placeholder="Mouza search..." oninput="filterTable()">
+        <input class="search-box" id="searchBox" type="text" placeholder="موضع تلاش..." oninput="filterTable()">
       </div>
       <div id="tableArea"><div class="empty">اوپر سے تحصیل منتخب کریں</div></div>
     </div>
   </div>
 
-  <!-- Scanning View -->
+  <!-- SCANNING VIEW -->
   <div id="viewScanning" style="display:none">
+    <div class="action-bar">
+      <button class="act-btn primary" onclick="printView('scanning')">🖨️ پرنٹ</button>
+      <button class="act-btn" onclick="downloadCSV('scanning')">⬇️ ڈاؤنلوڈ CSV</button>
+    </div>
     <div class="table-wrap">
       <div class="tbl-header">
         <div>
           <span class="tbl-title" style="color:#e65100">زیر اسکیننگ موضعات</span>
           <span class="tbl-badge scanning" id="scanCount"></span>
         </div>
-        <input class="search-box" id="searchBoxScan" type="text" placeholder="Mouza search..." oninput="filterScan()">
+        <input class="search-box" id="searchBoxScan" type="text" placeholder="موضع تلاش..." oninput="filterScan()">
       </div>
       <div id="scanArea"><div class="empty">کوئی ڈیٹا نہیں</div></div>
     </div>
   </div>
 
-  <!-- Complete View -->
+  <!-- COMPLETE VIEW -->
   <div id="viewComplete" style="display:none">
+    <div class="action-bar">
+      <button class="act-btn primary" onclick="printView('complete')">🖨️ پرنٹ</button>
+      <button class="act-btn" onclick="downloadCSV('complete')">⬇️ ڈاؤنلوڈ CSV</button>
+    </div>
     <div class="table-wrap">
       <div class="tbl-header">
         <div>
           <span class="tbl-title" style="color:#2e7d32">مکمل موضعات</span>
           <span class="tbl-badge complete" id="compCount"></span>
         </div>
-        <input class="search-box" id="searchBoxComp" type="text" placeholder="Mouza search..." oninput="filterComp()">
+        <input class="search-box" id="searchBoxComp" type="text" placeholder="موضع تلاش..." oninput="filterComp()">
       </div>
       <div id="compArea"><div class="empty">کوئی ڈیٹا نہیں</div></div>
+    </div>
+  </div>
+
+  <!-- SKIPPED YEARS VIEW -->
+  <div id="viewSkipped" style="display:none">
+    <div class="action-bar">
+      <button class="act-btn primary" onclick="printView('skipped')">🖨️ پرنٹ</button>
+      <button class="act-btn" onclick="downloadCSV('skipped')">⬇️ ڈاؤنلوڈ CSV</button>
+    </div>
+
+    <!-- Controls -->
+    <div class="skip-panel">
+      <div class="skip-panel-head">
+        <span class="skip-panel-title">چھوٹے سال — مکمل موضعات</span>
+        <span class="tbl-badge skipped" id="skipCount"></span>
+      </div>
+      <div class="skip-controls">
+        <label>شروع سال:</label>
+        <input type="number" id="skipFrom" value="1800">
+        <label>آخر سال:</label>
+        <input type="number" id="skipTo" value="2007">
+        <button class="skip-btn" onclick="calcSkipped()">تلاش کریں</button>
+      </div>
+      <div id="skipArea"><div class="empty">سال کی حد مقرر کر کے تلاش کریں</div></div>
     </div>
   </div>
 </div>
@@ -187,7 +247,12 @@ footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;
       <div class="modal-stats" id="modalStats"></div>
       <table class="modal-table">
         <thead><tr>
-          <th>#</th><th>Year Range</th><th>RHZ</th><th>Mutation</th><th>Shajra</th><th>Status</th><th>Operator</th>
+          <th style="text-align:right">حیثیت</th>
+          <th style="text-align:right">شجرہ</th>
+          <th style="text-align:right">انتقال</th>
+          <th style="text-align:right">RHZ</th>
+          <th style="text-align:right">سال</th>
+          <th style="text-align:center;direction:ltr">نمبر</th>
         </tr></thead>
         <tbody id="modalBody"></tbody>
       </table>
@@ -198,27 +263,163 @@ footer{text-align:center;padding:20px;font-size:11px;color:#aaa;margin-top:32px;
 <footer>Punjab Land Records Authority &nbsp;·&nbsp; Board of Revenue, Government of Punjab</footer>
 
 <script>
-const API = 'https://script.google.com/macros/s/AKfycbwkf4CKIBKJ7fq8lzCt27I1EYe7z0QeB-gNL6GaLgFO2tJISpq2DZHtFUHU-5eZi0FsGg/exec';
+const API = 'https://script.google.com/macros/s/AKfycbx3XxXp_T4i_Hg__EJly0IVnqvd7tVR72R-Fq1wykUsljHCj_UQ3ek8WkSQrhrg_KXiHg/exec';
 
-// ── State (tab-local, cleared on each tab switch) ──
 let state = {
-  headers: [],
-  groups: {},
-  idx: {},
-  allRows: [],
-  currentRows: [],    // all mouzas
-  scanningRows: [],   // pending/scanning
-  completeRows: []    // complete
+  headers:[], groups:{}, idx:{},
+  allRows:[], currentRows:[], scanningRows:[], completeRows:[], skippedData:[]
 };
-
 let currentView = 'all';
 
+// ── Table renderer (shared) ──────────────────────────
+function renderTable(data, areaId) {
+  if (!data.length) {
+    document.getElementById(areaId).innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
+    return;
+  }
+  let html = `<table style="direction:rtl;table-layout:fixed;width:100%">
+    <colgroup>
+      <col style="width:110px">
+      <col style="width:200px">
+      <col style="width:75px">
+      <col style="width:auto">
+      <col style="width:48px">
+    </colgroup>
+    <thead><tr>
+      <th style="text-align:right">حیثیت</th>
+      <th style="text-align:right">اقسام</th>
+      <th style="text-align:right">رجسٹر</th>
+      <th style="text-align:right">موضع نام</th>
+      <th style="text-align:center;direction:ltr">نمبر</th>
+    </tr></thead><tbody>`;
+
+  data.forEach((d, i) => {
+    html += `<tr onclick="openModal('${esc(d.mouza)}')">
+      <td style="text-align:right">
+        <span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'مکمل':'اسکیننگ'}</span>
+      </td>
+      <td style="white-space:nowrap;text-align:right">
+        ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
+        ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
+        ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
+      </td>
+      <td style="text-align:right;font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
+      <td style="text-align:right"><div class="mouza-name-ur">${d.mouza}</div></td>
+      <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  document.getElementById(areaId).innerHTML = html;
+}
+
+// ── Skipped Years renderer ───────────────────────────
+function calcSkipped() {
+  const from = parseInt(document.getElementById('skipFrom').value);
+  const to   = parseInt(document.getElementById('skipTo').value);
+  if (isNaN(from) || isNaN(to) || from >= to) {
+    document.getElementById('skipArea').innerHTML = '<div class="empty">شروع سال آخر سال سے کم ہونا چاہیے</div>';
+    return;
+  }
+
+  const headers = state.headers;
+  const idx     = state.idx;
+  const h       = headers;
+
+  // Only completed mouzas
+  const completedMouzas = state.completeRows;
+  if (!completedMouzas.length) {
+    document.getElementById('skipArea').innerHTML = '<div class="empty">کوئی مکمل موضع نہیں</div>';
+    return;
+  }
+
+  // Parse year ranges from year column e.g. "1885-1886" or "1885"
+  function parseYears(yearStr) {
+    if (!yearStr) return [];
+    const s = String(yearStr).trim();
+    const range = s.match(/(\d{4})\s*[-–]\s*(\d{4})/);
+    if (range) {
+      const y1 = parseInt(range[1]), y2 = parseInt(range[2]);
+      const years = [];
+      for (let y = y1; y <= y2; y++) years.push(y);
+      return years;
+    }
+    const single = s.match(/(\d{4})/);
+    if (single) return [parseInt(single[1])];
+    return [];
+  }
+
+  let rows = [];
+  state.skippedData = [];
+
+  completedMouzas.forEach(d => {
+    const rs = state.groups[d.mouza] || [];
+    // Collect all scanned years for this mouza
+    const scannedYears = new Set();
+    rs.forEach(r => {
+      parseYears(r[h[idx.yIdx]]).forEach(y => {
+        if (y >= from && y <= to) scannedYears.add(y);
+      });
+    });
+
+    // Find skipped years in range
+    const skipped = [];
+    for (let y = from; y <= to; y++) {
+      if (!scannedYears.has(y)) skipped.push(y);
+    }
+
+    if (skipped.length) {
+      state.skippedData.push({ mouza: d.mouza, skipped, scanned: [...scannedYears].sort((a,b)=>a-b) });
+    }
+  });
+
+  document.getElementById('skipCount').textContent = state.skippedData.length + ' موضعات';
+
+  if (!state.skippedData.length) {
+    document.getElementById('skipArea').innerHTML = '<div class="empty">کوئی چھوٹا سال نہیں ملا</div>';
+    return;
+  }
+
+  let html = `<table style="direction:rtl;table-layout:auto;width:100%">
+    <thead><tr style="background:#f4f6f8">
+      <th style="text-align:right;padding:10px 14px;font-family:\'Noto Nastaliq Urdu\',serif;font-size:14px;line-height:1.8;border-bottom:1px solid #dde3ea;color:#888">موضع نام</th>
+      <th style="text-align:right;padding:10px 14px;font-family:\'Noto Nastaliq Urdu\',serif;font-size:14px;line-height:1.8;border-bottom:1px solid #dde3ea;color:#c62828">چھوٹے سال</th>
+      <th style="text-align:right;padding:10px 14px;font-family:\'Noto Nastaliq Urdu\',serif;font-size:14px;line-height:1.8;border-bottom:1px solid #dde3ea;color:#888">اسکین شدہ سال</th>
+      <th style="text-align:center;padding:10px 14px;font-family:\'Noto Nastaliq Urdu\',serif;font-size:14px;line-height:1.8;border-bottom:1px solid #dde3ea;color:#888;direction:ltr">نمبر</th>
+    </tr></thead><tbody>`;
+
+  state.skippedData.forEach((d, i) => {
+    const skippedPills = d.skipped.map(y => `<span class="pill p-skip">${y}</span>`).join(' ');
+    const scannedPills = d.scanned.map(y => `<span class="pill p-sha" style="font-size:10px">${y}</span>`).join(' ');
+    html += `<tr class="skip-mouza-row" style="border-bottom:1px solid #f0f2f5">
+      <td style="padding:12px 14px;text-align:right"><div class="mouza-name-ur">${d.mouza}</div></td>
+      <td style="padding:12px 14px;text-align:right"><div class="skip-years-cell">${skippedPills}</div></td>
+      <td style="padding:12px 14px;text-align:right"><div class="skip-years-cell">${scannedPills}</div></td>
+      <td style="padding:12px 14px;text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  document.getElementById('skipArea').innerHTML = html;
+}
+
+// ── Init & Tab loading ───────────────────────────────
 async function init() {
   try {
     const data = await apiFetch('');
     if (!data.tabs || !data.tabs.length) throw new Error('No tabs');
     renderTabs(data.tabs);
-    loadTab(data.tabs[0]);
+
+    // Pehli tab ka data already aa gaya — seedha use karo
+    if (data.firstTab && data.headers) {
+      const btn = document.getElementById('tab-' + esc(data.firstTab));
+      if (btn) btn.classList.add('active');
+      document.getElementById('tblTitle').textContent = data.firstTab;
+      state.allRows  = data.rows    || [];
+      state.headers  = data.headers || [];
+      buildTable(state.allRows, state.headers);
+      updateStats();
+    } else {
+      loadTab(data.tabs[0]);
+    }
   } catch(e) {
     document.getElementById('tabNav').innerHTML =
       '<span style="padding:14px 20px;color:#c00;font-size:12px">⚠ Apps Script URL set karein</span>';
@@ -232,20 +433,17 @@ function renderTabs(tabs) {
 }
 
 async function loadTab(tabName) {
-  // Reset state completely for new tab
-  state = { headers:[], groups:{}, idx:{}, allRows:[], currentRows:[], scanningRows:[], completeRows:[] };
+  state = { headers:[], groups:{}, idx:{}, allRows:[], currentRows:[], scanningRows:[], completeRows:[], skippedData:[] };
 
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const btn = document.getElementById('tab-' + esc(tabName));
   if (btn) btn.classList.add('active');
 
   document.getElementById('tblTitle').textContent = tabName;
-  document.getElementById('tableArea').innerHTML = '<div class="loader"><div class="spinner"></div>لوڈ ہو رہا ہے...</div>';
-  document.getElementById('scanArea').innerHTML  = '<div class="loader"><div class="spinner"></div></div>';
-  document.getElementById('compArea').innerHTML  = '<div class="loader"><div class="spinner"></div></div>';
-  document.getElementById('searchBox').value     = '';
-  document.getElementById('searchBoxScan').value = '';
-  document.getElementById('searchBoxComp').value = '';
+  ['tableArea','scanArea','compArea','skipArea'].forEach(id => {
+    document.getElementById(id).innerHTML = '<div class="loader"><div class="spinner"></div></div>';
+  });
+  ['searchBox','searchBoxScan','searchBoxComp'].forEach(id => document.getElementById(id).value = '');
 
   try {
     const data = await apiFetch(tabName);
@@ -272,7 +470,6 @@ function buildTable(rows, headers) {
     return;
   }
 
-  // Group by mouza
   const groups = {};
   rows.forEach(r => {
     const m = r[headers[mIdx]] || '';
@@ -300,101 +497,86 @@ function buildTable(rows, headers) {
   renderTable(state.currentRows,  'tableArea');
   renderTable(state.scanningRows, 'scanArea');
   renderTable(state.completeRows, 'compArea');
-}
-
-function renderTable(data, areaId) {
-  if (!data.length) {
-    document.getElementById(areaId).innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
-    return;
-  }
-  let html = `<table style="direction:rtl;table-layout:fixed;width:100%">
-    <colgroup>
-      <col style="width:110px">
-      <col style="width:210px">
-      <col style="width:80px">
-      <col style="width:auto">
-      <col style="width:44px">
-    </colgroup>
-    <thead><tr>
-      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">حیثیت</th>
-      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">اقسام</th>
-      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">رجسٹر</th>
-      <th style="text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8">موضع نام</th>
-      <th style="text-align:center;direction:ltr">#</th>
-    </tr></thead><tbody>`;
-
-  data.forEach((d, i) => {
-    html += `<tr onclick="openModal('${esc(d.mouza)}')">
-      <td style="text-align:right">
-        <span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'Complete':'Scanning'}</span>
-      </td>
-      <td style="white-space:nowrap;text-align:right">
-        ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
-        ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
-        ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
-      </td>
-      <td style="text-align:right;font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
-      <td style="text-align:right">
-        <div class="mouza-name-ur" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${d.mouza}</div>
-      </td>
-      <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
-    </tr>`;
-  });
-  html += '</tbody></table>';
-  document.getElementById(areaId).innerHTML = html;
+  document.getElementById('skipArea').innerHTML = '<div class="empty">سال کی حد مقرر کر کے تلاش کریں</div>';
 }
 
 function updateStats() {
-  const total    = state.currentRows.length;
-  const scanning = state.scanningRows.length;
-  const complete = state.completeRows.length;
-  const regs     = state.allRows.length;
-
-  document.getElementById('sMouza').textContent    = total;
-  document.getElementById('sRegs').textContent     = regs;
-  document.getElementById('sScanning').textContent = scanning;
-  document.getElementById('sComplete').textContent = complete;
-
-  document.getElementById('allCount').textContent  = total + ' mouzas';
-  document.getElementById('scanCount').textContent = scanning + ' mouzas';
-  document.getElementById('compCount').textContent = complete + ' mouzas';
+  document.getElementById('sMouza').textContent    = state.currentRows.length;
+  document.getElementById('sRegs').textContent     = state.allRows.length;
+  document.getElementById('sScanning').textContent = state.scanningRows.length;
+  document.getElementById('sComplete').textContent = state.completeRows.length;
+  document.getElementById('allCount').textContent  = state.currentRows.length + ' موضعات';
+  document.getElementById('scanCount').textContent = state.scanningRows.length + ' موضعات';
+  document.getElementById('compCount').textContent = state.completeRows.length + ' موضعات';
 }
 
-// ── View Toggle ──
+// ── View Toggle ──────────────────────────────────────
 function setView(v) {
   currentView = v;
-  document.getElementById('viewAll').style.display      = v === 'all'      ? '' : 'none';
-  document.getElementById('viewScanning').style.display = v === 'scanning' ? '' : 'none';
-  document.getElementById('viewComplete').style.display = v === 'complete' ? '' : 'none';
-  document.getElementById('vtAll').classList.toggle('active',      v === 'all');
-  document.getElementById('vtScanning').classList.toggle('active', v === 'scanning');
-  document.getElementById('vtComplete').classList.toggle('active', v === 'complete');
+  ['all','scanning','complete','skipped'].forEach(n => {
+    document.getElementById('view' + n.charAt(0).toUpperCase() + n.slice(1)).style.display = v === n ? '' : 'none';
+    document.getElementById('vt' + n.charAt(0).toUpperCase() + n.slice(1)).classList.toggle('active', v === n);
+  });
 }
 
-// ── Search ──
+// ── Search ───────────────────────────────────────────
 function filterTable() {
   const q = document.getElementById('searchBox').value.toLowerCase().trim();
-  const filtered = q ? state.currentRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.currentRows;
-  renderTable(filtered, 'tableArea');
+  renderTable(q ? state.currentRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.currentRows, 'tableArea');
 }
 function filterScan() {
   const q = document.getElementById('searchBoxScan').value.toLowerCase().trim();
-  const filtered = q ? state.scanningRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.scanningRows;
-  renderTable(filtered, 'scanArea');
+  renderTable(q ? state.scanningRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.scanningRows, 'scanArea');
 }
 function filterComp() {
   const q = document.getElementById('searchBoxComp').value.toLowerCase().trim();
-  const filtered = q ? state.completeRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.completeRows;
-  renderTable(filtered, 'compArea');
+  renderTable(q ? state.completeRows.filter(d => d.mouza.toLowerCase().includes(q)) : state.completeRows, 'compArea');
 }
 
-// ── Modal ──
+// ── Print ────────────────────────────────────────────
+function printView(view) {
+  window.print();
+}
+
+// ── Download CSV ─────────────────────────────────────
+function downloadCSV(view) {
+  let rows, filename;
+  if (view === 'all') {
+    rows = state.currentRows; filename = 'tamam_mouzaat.csv';
+  } else if (view === 'scanning') {
+    rows = state.scanningRows; filename = 'zer_iskaning.csv';
+  } else if (view === 'complete') {
+    rows = state.completeRows; filename = 'mukammal_mouzaat.csv';
+  } else if (view === 'skipped') {
+    // skipped CSV
+    if (!state.skippedData.length) { alert('پہلے تلاش کریں'); return; }
+    const lines = ['موضع نام,چھوٹے سال,اسکین شدہ سال'];
+    state.skippedData.forEach(d => {
+      lines.push(`"${d.mouza}","${d.skipped.join(', ')}","${d.scanned.join(', ')}"`);
+    });
+    downloadFile(lines.join('\n'), 'chootay_saal.csv', 'text/csv;charset=utf-8;');
+    return;
+  }
+  const lines = ['موضع نام,رجسٹر,RHZ,Mutation,Shajra,حیثیت'];
+  rows.forEach(d => {
+    lines.push(`"${d.mouza}",${d.totalReg},${d.totalRhz},${d.totalMut},${d.totalSha},"${d.complete?'مکمل':'اسکیننگ'}"`);
+  });
+  downloadFile(lines.join('\n'), filename, 'text/csv;charset=utf-8;');
+}
+
+function downloadFile(content, filename, mime) {
+  const blob = new Blob(['\uFEFF' + content], { type: mime });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── Modal ────────────────────────────────────────────
 function openModal(mouza) {
-  const groups  = state.groups;
-  const headers = state.headers;
-  const idx     = state.idx;
-  const rs = groups[mouza] || [];
-  const h  = headers;
+  const rs  = state.groups[mouza] || [];
+  const h   = state.headers;
+  const idx = state.idx;
 
   document.getElementById('modalTitle').textContent = mouza;
 
@@ -403,21 +585,19 @@ function openModal(mouza) {
   const totalSha = rs.reduce((s,r) => s + (parseInt(r[h[idx.sIdx]]) || 0), 0);
 
   document.getElementById('modalStats').innerHTML = `
-    <div class="mstat"><div class="mstat-num">${rs.length}</div><div class="mstat-lbl">Registers</div></div>
+    <div class="mstat"><div class="mstat-num">${rs.length}</div><div class="mstat-lbl">رجسٹر</div></div>
     <div class="mstat"><div class="mstat-num" style="color:#1565c0">${totalRhz}</div><div class="mstat-lbl">RHZ</div></div>
-    <div class="mstat"><div class="mstat-num" style="color:#6a1b9a">${totalMut}</div><div class="mstat-lbl">Mutation</div></div>
-    <div class="mstat"><div class="mstat-num" style="color:#2e7d32">${totalSha}</div><div class="mstat-lbl">Shajra</div></div>`;
+    <div class="mstat"><div class="mstat-num" style="color:#6a1b9a">${totalMut}</div><div class="mstat-lbl">انتقال</div></div>
+    <div class="mstat"><div class="mstat-num" style="color:#2e7d32">${totalSha}</div><div class="mstat-lbl">شجرہ</div></div>`;
 
-  const opIdx = h.findIndex(x => x.toLowerCase().includes('operator'));
   document.getElementById('modalBody').innerHTML = rs.map((r, i) => `
     <tr>
-      <td style="color:#aaa;font-size:12px">${i+1}</td>
-      <td style="font-weight:500">${r[h[idx.yIdx]] || '—'}</td>
-      <td>${r[h[idx.rIdx]] > 0 ? `<span class="pill p-rhz">${r[h[idx.rIdx]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
-      <td>${r[h[idx.mIdx2]] > 0 ? `<span class="pill p-mut">${r[h[idx.mIdx2]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
-      <td>${r[h[idx.sIdx]] > 0 ? `<span class="pill p-sha">${r[h[idx.sIdx]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
-      <td><span class="badge ${(r[h[idx.stIdx]]||'').toLowerCase()==='complete'?'b-complete':'b-pending'}">${r[h[idx.stIdx]]||'—'}</span></td>
-      <td><span style="font-size:12px;color:#555">${r[h[opIdx]]||'—'}</span></td>
+      <td style="text-align:right"><span class="badge ${(r[h[idx.stIdx]]||'').toLowerCase()==='complete'?'b-complete':'b-pending'}">${(r[h[idx.stIdx]]||'').toLowerCase()==='complete'?'مکمل':'اسکیننگ'}</span></td>
+      <td style="text-align:right">${r[h[idx.sIdx]] > 0 ? `<span class="pill p-sha">${r[h[idx.sIdx]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
+      <td style="text-align:right">${r[h[idx.mIdx2]] > 0 ? `<span class="pill p-mut">${r[h[idx.mIdx2]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
+      <td style="text-align:right">${r[h[idx.rIdx]] > 0 ? `<span class="pill p-rhz">${r[h[idx.rIdx]]}</span>` : '<span style="color:#ccc">—</span>'}</td>
+      <td style="text-align:right;font-weight:500">${r[h[idx.yIdx]] || '—'}</td>
+      <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
     </tr>`).join('');
 
   document.getElementById('modalBg').classList.add('open');
@@ -437,7 +617,7 @@ async function apiFetch(tab) {
   return res.json();
 }
 
-function esc(s) { return s.replace(/'/g,"\'").replace(/"/g,'&quot;'); }
+function esc(s) { return (s||'').replace(/'/g,"\\'").replace(/"/g,'&quot;'); }
 
 init();
 </script>
