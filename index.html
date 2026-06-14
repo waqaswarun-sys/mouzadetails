@@ -277,35 +277,33 @@ function renderTable(data, areaId) {
     document.getElementById(areaId).innerHTML = '<div class="empty">کوئی ڈیٹا نہیں</div>';
     return;
   }
-  let html = `<table style="direction:rtl;table-layout:fixed;width:100%">
-    <colgroup>
-      <col style="width:110px">
-      <col style="width:200px">
-      <col style="width:75px">
-      <col style="width:auto">
-      <col style="width:48px">
-    </colgroup>
-    <thead><tr>
-      <th style="text-align:right">حیثیت</th>
-      <th style="text-align:right">اقسام</th>
-      <th style="text-align:right">رجسٹر</th>
-      <th style="text-align:right">موضع نام</th>
-      <th style="text-align:center;direction:ltr">نمبر</th>
+  // LTR HTML order but visually RTL via direction:rtl on table
+  // Column order in HTML (left=first in DOM):
+  // نمبر | موضع نام | رجسٹر | اقسام | حیثیت
+  // RTL flips this visually to:
+  // حیثیت | اقسام | رجسٹر | موضع نام | نمبر  (right to left)
+  let html = `<table style="direction:rtl;width:100%;border-collapse:collapse">
+    <thead><tr style="background:#f4f6f8">
+      <th style="text-align:center;direction:ltr;padding:11px 16px;font-size:11px;color:#888;border-bottom:1px solid #dde3ea;width:48px">نمبر</th>
+      <th style="text-align:right;padding:11px 16px;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8;color:#888;border-bottom:1px solid #dde3ea">موضع نام</th>
+      <th style="text-align:right;padding:11px 16px;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8;color:#888;border-bottom:1px solid #dde3ea;width:75px">رجسٹر</th>
+      <th style="text-align:right;padding:11px 16px;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8;color:#888;border-bottom:1px solid #dde3ea;width:220px">اقسام</th>
+      <th style="text-align:right;padding:11px 16px;font-family:'Noto Nastaliq Urdu',serif;font-size:14px;line-height:1.8;color:#888;border-bottom:1px solid #dde3ea;width:110px">حیثیت</th>
     </tr></thead><tbody>`;
 
   data.forEach((d, i) => {
-    html += `<tr onclick="openModal('${esc(d.mouza)}')">
-      <td style="text-align:right">
-        <span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'مکمل':'اسکیننگ'}</span>
-      </td>
-      <td style="white-space:nowrap;text-align:right">
+    html += `<tr onclick="openModal('${esc(d.mouza)}')" style="cursor:pointer;transition:background 0.12s" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background=''">
+      <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px;padding:11px 16px;border-bottom:1px solid #f0f2f5">${i+1}</td>
+      <td style="text-align:right;padding:11px 16px;border-bottom:1px solid #f0f2f5"><div class="mouza-name-ur">${d.mouza}</div></td>
+      <td style="text-align:right;font-size:16px;font-weight:600;color:#1a3a5c;padding:11px 16px;border-bottom:1px solid #f0f2f5">${d.totalReg}</td>
+      <td style="white-space:nowrap;text-align:right;padding:11px 16px;border-bottom:1px solid #f0f2f5">
         ${d.totalRhz ? `<span class="pill p-rhz">${d.totalRhz} RHZ</span>` : ''}
         ${d.totalMut ? `<span class="pill p-mut">${d.totalMut} Mut</span>` : ''}
         ${d.totalSha ? `<span class="pill p-sha">${d.totalSha} Sha</span>` : ''}
       </td>
-      <td style="text-align:right;font-size:16px;font-weight:600;color:#1a3a5c">${d.totalReg}</td>
-      <td style="text-align:right"><div class="mouza-name-ur">${d.mouza}</div></td>
-      <td style="text-align:center;direction:ltr;color:#aaa;font-size:12px">${i+1}</td>
+      <td style="text-align:right;padding:11px 16px;border-bottom:1px solid #f0f2f5">
+        <span class="badge ${d.complete ? 'b-complete':'b-pending'}">${d.complete ? 'مکمل':'اسکیننگ'}</span>
+      </td>
     </tr>`;
   });
   html += '</tbody></table>';
